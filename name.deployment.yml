@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: name-deployment
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: name
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: name
+    spec:
+      containers:
+      - name: name
+        image: whanos-javascript-standalone
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: 128M
+          requests:
+            memory: 64M

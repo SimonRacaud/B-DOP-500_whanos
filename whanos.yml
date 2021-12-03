@@ -7,4 +7,3 @@ deployment:
       memory: "64M"
   ports:
     - 3000
-
